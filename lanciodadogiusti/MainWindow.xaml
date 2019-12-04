@@ -7,11 +7,30 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="txtnumero" HorizontalAlignment="Left" Height="95" Margin="295,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" FontSize="72" FontWeight="Bold" TextAlignment="Center" TextChanged="TextBox_TextChanged"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="Image1.png"/>
+        </Grid.Background>
+        <TextBox x:Name="txtnumero" HorizontalAlignment="Left" Height="95" Margin="295,135,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" FontSize="72" FontWeight="Bold" TextAlignment="Center" Foreground="White" BorderBrush="{x:Null}" >
+            <TextBox.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF7400FF"/>
+                </RadialGradientBrush>
+            </TextBox.Background>
+        </TextBox>
         <Button Content="TIRA I DADI!!" HorizontalAlignment="Left" Margin="572,30,0,0" VerticalAlignment="Top" Width="210" Height="85" FontSize="24" FontWeight="Bold" Click="Button_Click"/>
-        <Button x:Name="txtritenta" Content="RITENTA SARAI PIU FORTUNATO(non è vero)" HorizontalAlignment="Left" Margin="10,325,0,0" VerticalAlignment="Top" Width="772" Height="85" FontSize="18" Click="txtritenta_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="95" Width="240" FontSize="24"><Run Text="INSERISCI UN NUMERO"/><Run Text=" DA 1 A"/><Run Text=" 6"/><Run Text=":"/></TextBlock>
-        <TextBlock x:Name="txtrisultato" HorizontalAlignment="Left" Margin="225,145,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="180" Width="345" FontSize="72" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="95" Width="240" FontSize="24" FontWeight="Bold" Foreground="White"><Run Text="INSERISCI UN NUMERO"/><Run Text=" DA 1 A"/><Run Text=" 6"/><Run Text=":"/></TextBlock>
+        <TextBlock x:Name="txtrisultato" HorizontalAlignment="Left" Margin="222,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="189" Width="345" FontSize="72" FontWeight="Bold" TextAlignment="Center" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="5,324,0,0" TextWrapping="Wrap" Text="CREDITO" VerticalAlignment="Top" Height="41" Width="180" FontWeight="Bold" FontSize="24" Foreground="White"/>
+
+        <TextBlock HorizontalAlignment="Left" Height="75" Margin="673,115,-43,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" FontSize="24" FontWeight="Bold" Foreground="White"><Run Text="NUMERO "/><Run Text="USCITO"/><Run Text=":"/></TextBlock>
+        <TextBlock x:Name="txtrandom" HorizontalAlignment="Left" Height="105" Margin="673,165,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="119" FontSize="72" FontWeight="Bold" TextAlignment="Center" Foreground="White"/>
+        <Image Margin="572,250,0,0" Source="Image3.png" Stretch="Fill"/>
+        <TextBlock HorizontalAlignment="Left" Height="90" Margin="75,25,0,0" TextWrapping="Wrap" Text="THA CASINO" VerticalAlignment="Top" Width="455" Foreground="White" FontSize="72" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Height="65" Margin="10,205,0,0" TextWrapping="Wrap" Text="PUNTATA" VerticalAlignment="Top" Width="207" FontSize="22" FontWeight="Bold" Foreground="White"/>
+        <TextBox x:Name="txtpuntata" HorizontalAlignment="Left" Height="64" Margin="5,255,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="115" FontWeight="Bold" FontSize="36" Foreground="White" Background="#FF7400FF"/>
+        <Button x:Name="txtriprova" Content="RIPROVA" HorizontalAlignment="Left" Height="55" Margin="515,175,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold" FontSize="24" Click="txtriprova_Click"/>
+        <TextBlock x:Name="txtcredito" HorizontalAlignment="Left" Height="70" Margin="5,350,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="212" FontSize="48" Foreground="White" FontWeight="Bold"/>
 
     </Grid>
 </Window>

@@ -28,26 +28,56 @@ namespace lanciodadogiusti
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             double a = double.Parse(txtnumero.Text);
-            if(a > 6 || a < 1)
+            double credito = double.Parse(txtcredito.Text);
+            double puntata = double.Parse(txtpuntata.Text);
+            if (puntata < credito)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("IMPOSSIBILE", "NABBO", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            if (a > 6 || a < 1)
             {
                 MessageBox.Show("MA CI SEI O CI FAI", "ERRORE", MessageBoxButton.OK, MessageBoxImage.Error);
                 txtnumero.Clear();
-            }else
+            }
+            else
             {
                 Random r = new Random();
                 int b = r.Next(1, 7);
                 if (a == b)
                 {
-                    txtrisultato.Text = string.Format("BOMBER");
+                    txtrisultato.Text = "BOMBER";
+                    txtrandom.Text = $"{b}";
+                    credito = puntata * 2 + credito;
+                    txtcredito.Text = $"{credito}";
                 }
                 else
                 {
-                    txtrisultato.Text = string.Format("FAI SCHIFO");
+                    txtrisultato.Text = "FAI SCHIFO";
+                    txtrandom.Text = $"{b}";
+                    credito = credito - puntata;
+                    txtcredito.Text = $"{credito}";
                     a = 0;
                     b = 0;
                 }
+                if (credito <= 0)
+                {
+                    MessageBox.Show("GAME OVER", "NABBO", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
             }
 
+
+        }
+
+        private void txtriprova_Click(object sender, RoutedEventArgs e)
+        {
+            txtnumero.Clear();
+            txtpuntata.Clear();
+            txtcredito.Text = "100";
         }
     }
 }
